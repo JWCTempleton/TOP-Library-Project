@@ -1,3 +1,5 @@
+let myLibrary = [];
+
 function Book(title, author, pages, wasRead) {
   this.title = title;
   this.author = author;
@@ -9,6 +11,11 @@ function Book(title, author, pages, wasRead) {
   };
 }
 
+function addBookToLibrary(book) {
+  myLibrary.push(book);
+  return myLibrary;
+}
+
 const book1 = new Book("The Hobbit", "JRR Tolkien", 300, "book was read");
 const book2 = new Book(
   "The Two Towers",
@@ -17,5 +24,4 @@ const book2 = new Book(
   "book was not read"
 );
 
-console.log(book1.getInfo());
-console.log(book2.getInfo());
+console.log(addBookToLibrary(book1));
