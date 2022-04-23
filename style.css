@@ -25,6 +25,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+    /* font-family: 'Roboto', sans-serif; */
 }
 ol, ul {
 	list-style: none;
@@ -50,3 +51,27 @@ table {
     display: flex;
 }
 
+/* HEADER STYLING */
+.header {
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    border-bottom: 3px solid black;
+    padding: 0 20px;
+}
+
+.add_btn {
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 0;
+    font-family: inherit;
+    font-weight: 700;
+}
+
+.page_title {
+    font-weight: 700;
+    font-size: 24px;
+}
