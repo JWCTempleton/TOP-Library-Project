@@ -49,16 +49,15 @@ table {
     background-color: coral;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
 }
 
-/* HEADER STYLING */
+/* ////////// HEADER STYLING ////////////////// */
 .header {
-    margin: 20px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 100px;
-    width: 100%;
+    height: 15%;
     border-bottom: 3px solid black;
     padding: 0 20px;
 }
@@ -74,4 +73,10 @@ table {
 .page_title {
     font-weight: 700;
     font-size: 24px;
+}
+
+.card {
+    background-color: chartreuse;
+    color: white;
+    margin-top: 10px;
 }
