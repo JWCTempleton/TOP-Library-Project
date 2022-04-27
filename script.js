@@ -1,10 +1,10 @@
 const myLibrary = [];
 
-function Book(title, author, pages, wasRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.wasRead = wasRead;
+function Book(title, author, pages, read) {
+  this.Title = title;
+  this.Author = author;
+  this.Pages = pages;
+  this.Read = read;
 
   // this.getInfo = function () {
   //   return `${title} by ${author}, ${pages} pages, ${wasRead}.`;
@@ -34,13 +34,20 @@ function addBook(book) {
   //   div.textContent = `${book[title]}`;
   // }
   for (const book of myLibrary) {
+    let bookIndex = myLibrary.indexOf(book);
     const div = document.createElement("div");
+    const remove_button = document.createElement("button");
+
+    div.setAttribute("data-index", bookIndex);
 
     for (const i in book) {
       const p = document.createElement("p");
-      p.textContent += `${book[i]}\n`;
+      p.textContent += `${i}: ${book[i]}\n`;
       div.classList.add("card");
+      remove_button.textContent = "Remove Book";
+      remove_button.classList.add("remove_btn");
       div.appendChild(p);
+      div.appendChild(remove_button);
     }
     display.appendChild(div);
   }
@@ -48,10 +55,23 @@ function addBook(book) {
 
 addBook(myLibrary);
 
+//////////// FORM CONTROL BUTTONS //////////////////
 function openForm() {
   document.getElementById("popup_form").style.display = "block";
 }
 
 function closeForm() {
   document.getElementById("popup_form").style.display = "none";
+}
+
+function submitBook() {
+  const form = document.querySelector('form[name="bookForm"]');
+  const title = form.elements["title"].value;
+  const author = form.elements["author"].value;
+  const pages = form.elements["pages"].value;
+  const read = form.elements["bookRead"].value;
+  console.log(title);
+  console.log(author);
+  console.log(pages);
+  console.log(read);
 }
