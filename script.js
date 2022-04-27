@@ -28,7 +28,7 @@ console.log(addBookToLibrary(book1));
 addBookToLibrary(book2);
 
 function addBook(book) {
-  const container = document.querySelector("#container");
+  const display = document.querySelector("#display");
 
   // for (const book in myLibrary) {
   //   div.textContent = `${book[title]}`;
@@ -42,8 +42,16 @@ function addBook(book) {
       div.classList.add("card");
       div.appendChild(p);
     }
-    container.appendChild(div);
+    display.appendChild(div);
   }
 }
 
 addBook(myLibrary);
+
+function openForm() {
+  document.getElementById("popup_form").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("popup_form").style.display = "none";
+}

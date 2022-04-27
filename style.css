@@ -44,8 +44,7 @@ table {
 }
 
 .container {
-    height: 100vh;
-    width: 60%;
+    width: 60vw;
     background-color: coral;
     margin: 0 auto;
     display: flex;
@@ -57,7 +56,7 @@ table {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 15%;
+    height: 140px;
     border-bottom: 3px solid black;
     padding: 0 20px;
 }
@@ -72,11 +71,62 @@ table {
 
 .page_title {
     font-weight: 700;
-    font-size: 24px;
+    font-size: 32px;
 }
 
 .card {
+    width: max-content;
     background-color: chartreuse;
     color: white;
-    margin-top: 10px;
+    margin:20px 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.book_display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    background-color: brown;
+}
+
+
+/* /////////////// Book Form Styling //////////////////*/
+.login_popup {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.form_popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, 5%);
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.form_container {
+    max-width: 300px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.form_container input[type=text] {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 20px 0;
+    border: none;
+    background: #eee;
+}
+
+.form_container input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
 }

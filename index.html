@@ -17,7 +17,37 @@
     <div class="container" id="container">
       <div class="header">
         <h1 class="page_title">Welcome to your Library</h1>
-        <button class="add_btn">Add Book</button>
+        <button class="add_btn" onclick="openForm()">Add Book</button>
+      </div>
+      <div class="book_display" id="display"></div>
+    </div>
+
+    <div class="login_popup">
+      <div class="form_popup" id="popup_form">
+        <form action="#" class="form_container">
+          <h2>Please Enter Book Information</h2>
+          <label for="title">
+            <strong>Title</strong>
+          </label>
+          <input type="text" name="title" id="title" required />
+          <label for="author">
+            <strong>Author</strong>
+          </label>
+          <input type="text" name="author" id="author" required />
+          <label for="pages">
+            <strong>Pages</strong>
+          </label>
+          <input type="text" name="pages" id="pages" required />
+          <input type="radio" name="bookRead" id="read" value="read" checked />
+          <label for="read"><strong>Read</strong></label>
+          <input type="radio" name="bookRead" id="notRead" value="notRead" />
+          <label for="read"><strong>Not Read</strong></label>
+          <div>
+            <button type="button" class="btn_cancel" onclick="closeForm()">
+              Close
+            </button>
+          </div>
+        </form>
       </div>
     </div>
     <script src="./script.js"></script>
