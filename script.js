@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 
 function Book(title, author, pages, read) {
   this.Title = title;
@@ -23,9 +23,6 @@ const book2 = new Book(
   400,
   "book was not read"
 );
-
-console.log(addBookToLibrary(book1));
-addBookToLibrary(book2);
 
 function addBook(book) {
   const display = document.querySelector("#display");
@@ -53,14 +50,17 @@ function addBook(book) {
   }
 }
 
-addBook(myLibrary);
-
 //////////// FORM CONTROL BUTTONS //////////////////
 function openForm() {
   document.getElementById("popup_form").style.display = "block";
 }
 
 function closeForm() {
+  const form = document.querySelector('form[name="bookForm"]');
+  form.elements["title"].value = "";
+  form.elements["author"].value = "";
+  form.elements["pages"].value = "";
+  form.elements["read"].value = "";
   document.getElementById("popup_form").style.display = "none";
 }
 
@@ -70,8 +70,12 @@ function submitBook() {
   const author = form.elements["author"].value;
   const pages = form.elements["pages"].value;
   const read = form.elements["bookRead"].value;
-  console.log(title);
-  console.log(author);
-  console.log(pages);
-  console.log(read);
+
+  const submittedBook = new Book(title, author, pages, read);
+
+  addBookToLibrary(submittedBook);
+
+  addBook(myLibrary);
+  closeForm();
+  myLibrary = [];
 }
